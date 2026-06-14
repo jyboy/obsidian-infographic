@@ -8,7 +8,7 @@ export interface InfographicSettings {
 }
 
 export const DEFAULT_SETTINGS: InfographicSettings = {
-	defaultTheme: 'default'
+	defaultTheme: 'auto'
 };
 
 export class InfographicSettingTab extends PluginSettingTab {
@@ -24,14 +24,18 @@ export class InfographicSettingTab extends PluginSettingTab {
 		containerEl.empty();
 
 		// 获取可用主题列表
-		const themes = ['default', ...getThemes()];
+		const themes = ['auto', 'default', ...getThemes()];
+		const themeLabels: Record<string, string> = {
+			auto: 'Auto (follow Obsidian theme)',
+			default: 'default'
+		};
 
 		new Setting(containerEl)
 			.setName('Default theme')
-			.setDesc('Select the default theme for rendering infographics')
+			.setDesc('Select the theme for rendering infographics')
 			.addDropdown(dropdown => dropdown
-				.addOptions(Object.fromEntries(themes.map(theme => [theme, theme])))
-				.setValue(this.plugin.settings.defaultTheme || 'default')
+				.addOptions(Object.fromEntries(themes.map(theme => [theme, themeLabels[theme] ?? theme])))
+				.setValue(this.plugin.settings.defaultTheme || 'auto')
 				.onChange(async (value) => {
 					this.plugin.settings.defaultTheme = value;
 					await this.plugin.saveSettings();

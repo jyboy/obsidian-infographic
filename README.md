@@ -2,8 +2,6 @@
 
 > Obsidian plugin for rendering infographic diagrams using [@antv/infographic](https://github.com/antvis/Infographic)
 
-[**中文文档**](README.zh.md)
-
 ## Installation
 
 > **Note**: This plugin is not yet published in the Obsidian plugin marketplace. Please use one of the following methods to install it manually:
@@ -13,7 +11,7 @@
 1. Make sure you have installed [BRAT plugin](https://github.com/TfTHacker/obsidian42-brat)
 2. In BRAT settings, click the "Add a beta plugin" button and add this plugin's GitHub repository URL:
    ```
-   https://github.com/hcg1023/obsidian-infographic
+   https://github.com/jyboy/obsidian-infographic
    ```
 3. Version Selection
    - Select "Latest version", or install a specific version as needed
@@ -24,14 +22,14 @@
 1. Clone the project to your Obsidian plugins directory:
    ```bash
    cd ~/.obsidian/plugins
-   git clone https://github.com/hcg1023/obsidian-infographic.git
+   git clone https://github.com/jyboy/obsidian-infographic.git
    cd obsidian-infographic
    ```
 
 2. Install dependencies and build:
    ```bash
-   npm install
-   npm run build
+   pnpm install
+   pnpm run build
    ```
 
 3. Enable the plugin in Obsidian settings
@@ -39,20 +37,20 @@
 ### Method 3: Download Source + Pre-built File
 
 1. Download the project source code to `.obsidian/plugins` directory
-2. Download the `main.js` file from the [latest release](https://github.com/hcg1023/obsidian-infographic/releases/latest)
-3. Place `main.js` in `.obsidian/plugins/obsidian-infographic/` directory
+2. Download the `main.js` file from the [latest release](https://github.com/jyboy/obsidian-infographic/releases/latest)
+3. Place `main.js` in `.obsidian/plugins/antv-infographic/` directory
 4. Enable the plugin in Obsidian settings
 
 ### Method 4: Pre-built Files Only
 
-1. Download the following files from the [latest release](https://github.com/hcg1023/obsidian-infographic/releases/latest):
+1. Download the following files from the [latest release](https://github.com/jyboy/obsidian-infographic/releases/latest):
    - `main.js`
    - `manifest.json`
    - `styles.css`
 
-2. Create `obsidian-infographic` folder in `.obsidian/plugins/` directory (if it doesn't exist)
+2. Create `antv-infographic` folder in `.obsidian/plugins/` directory (if it doesn't exist)
 
-3. Place the downloaded files in `.obsidian/plugins/obsidian-infographic/` directory
+3. Place the downloaded files in `.obsidian/plugins/antv-infographic/` directory
 
 4. Enable the plugin in Obsidian settings
 
@@ -118,23 +116,23 @@ Right-click on the rendered infographic to access the following options:
 
 ### Prerequisites
 
-- Node.js >= 16
-- npm or yarn
+- Node.js >= 22
+- pnpm
 
 ### Build
 
 ```bash
 # Install dependencies
-npm install
+pnpm install
 
 # Development mode with hot reload
-npm run dev
+pnpm run dev
 
 # Production build
-npm run build
+pnpm run build
 
 # Run linter
-npm run lint
+pnpm run lint
 ```
 
 ### Project Structure
@@ -153,6 +151,10 @@ obsidian-infographic/
 ## Options
 
 This plugin uses [@antv/infographic](https://github.com/antvis/Infographic) for rendering. The infographic content is passed directly to the Infographic instance.
+
+Theme setting:
+- `Auto (follow Obsidian theme)` (default): automatically switches between `default` and `dark` when Obsidian theme changes
+- Built-in themes from `@antv/infographic` (for example `default`, `dark`, `hand-drawn`)
 
 For more information on infographic syntax and features, see the [Infographic documentation](https://github.com/antvis/Infographic).
 

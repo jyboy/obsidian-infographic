@@ -1,0 +1,348 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": [],
+  "categories": {
+    "correctness": "off"
+  },
+  "env": {
+    "builtin": true,
+    "browser": true
+  },
+  "globals": {
+    "OffscreenCanvas": "writable",
+    "AnimationEffectReadOnly": "readonly",
+    "AnimationEffectTiming": "readonly",
+    "AnimationEffectTimingReadOnly": "readonly",
+    "applicationCache": "readonly",
+    "ApplicationCache": "readonly",
+    "ApplicationCacheErrorEvent": "readonly",
+    "AudioWorkletGlobalScope": "readonly",
+    "AudioWorkletProcessor": "readonly",
+    "BudgetService": "readonly",
+    "defaultstatus": "readonly",
+    "defaultStatus": "readonly",
+    "HTMLContentElement": "readonly",
+    "HTMLShadowElement": "readonly",
+    "KeyframeEffectReadOnly": "readonly",
+    "MediaSettingsRange": "readonly",
+    "MediaStreamConstraints": "readonly",
+    "openDatabase": "readonly",
+    "PhotoCapabilities": "readonly",
+    "registerProcessor": "readonly",
+    "RTCIceGatherer": "readonly",
+    "RTCRtpContributingSource": "readonly",
+    "SVGDiscardElement": "readonly",
+    "DomElementInfo": "readonly",
+    "SvgElementInfo": "readonly",
+    "activeDocument": "readonly",
+    "activeWindow": "readonly",
+    "ajax": "readonly",
+    "ajaxPromise": "readonly",
+    "createDiv": "readonly",
+    "createEl": "readonly",
+    "createFragment": "readonly",
+    "createSpan": "readonly",
+    "createSvg": "readonly",
+    "fish": "readonly",
+    "fishAll": "readonly",
+    "isBoolean": "readonly",
+    "nextFrame": "readonly",
+    "ready": "readonly",
+    "sleep": "readonly"
+  },
+  "ignorePatterns": [
+    "node_modules",
+    "dist",
+    "esbuild.config.mjs",
+    "eslint.config.js",
+    "version-bump.mjs",
+    "versions.json",
+    "main.js"
+  ],
+  "rules": {
+    "constructor-super": "error",
+    "for-direction": "error",
+    "getter-return": "error",
+    "no-async-promise-executor": "error",
+    "no-case-declarations": "error",
+    "no-class-assign": "error",
+    "no-compare-neg-zero": "error",
+    "no-cond-assign": "error",
+    "no-const-assign": "error",
+    "no-constant-binary-expression": "error",
+    "no-constant-condition": "error",
+    "no-control-regex": "error",
+    "no-debugger": "error",
+    "no-delete-var": "error",
+    "no-dupe-class-members": "error",
+    "no-dupe-else-if": "error",
+    "no-dupe-keys": "error",
+    "no-duplicate-case": "error",
+    "no-empty": "error",
+    "no-empty-character-class": "error",
+    "no-empty-pattern": "error",
+    "no-empty-static-block": "error",
+    "no-ex-assign": "error",
+    "no-extra-boolean-cast": "error",
+    "no-fallthrough": "error",
+    "no-func-assign": "error",
+    "no-global-assign": "error",
+    "no-import-assign": "error",
+    "no-invalid-regexp": "error",
+    "no-irregular-whitespace": "error",
+    "no-loss-of-precision": "error",
+    "no-misleading-character-class": "error",
+    "no-new-native-nonconstructor": "error",
+    "no-nonoctal-decimal-escape": "error",
+    "no-obj-calls": "error",
+    "no-prototype-builtins": "error",
+    "no-redeclare": "error",
+    "no-regex-spaces": "error",
+    "no-self-assign": "error",
+    "no-setter-return": "error",
+    "no-shadow-restricted-names": "error",
+    "no-sparse-arrays": "error",
+    "no-this-before-super": "error",
+    "no-unexpected-multiline": "error",
+    "no-unreachable": "error",
+    "no-unsafe-finally": "error",
+    "no-unsafe-negation": "error",
+    "no-unsafe-optional-chaining": "error",
+    "no-unused-labels": "error",
+    "no-unused-private-class-members": "error",
+    "no-unused-vars": "error",
+    "no-useless-backreference": "error",
+    "no-useless-catch": "error",
+    "no-useless-escape": "error",
+    "no-with": "error",
+    "require-yield": "error",
+    "use-isnan": "error",
+    "valid-typeof": "error"
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/*.js",
+        "**/*.jsx"
+      ],
+      "rules": {
+        "no-array-constructor": "error",
+        "no-unused-expressions": "error",
+        "typescript/ban-ts-comment": "off",
+        "typescript/no-duplicate-enum-values": "error",
+        "typescript/no-empty-object-type": "error",
+        "typescript/no-explicit-any": [
+          "error",
+          {
+            "fixToUnknown": true
+          }
+        ],
+        "typescript/no-extra-non-null-assertion": "error",
+        "typescript/no-misused-new": "error",
+        "typescript/no-namespace": "error",
+        "typescript/no-non-null-asserted-optional-chain": "error",
+        "typescript/no-require-imports": "error",
+        "typescript/no-this-alias": "error",
+        "typescript/no-unnecessary-type-constraint": "error",
+        "typescript/no-unsafe-declaration-merging": "error",
+        "typescript/no-unsafe-function-type": "error",
+        "typescript/no-wrapper-object-types": "error",
+        "typescript/prefer-as-const": "error",
+        "typescript/prefer-namespace-keyword": "error",
+        "typescript/triple-slash-reference": "error",
+        "no-unused-vars": [
+          "warn",
+          {
+            "args": "none"
+          }
+        ],
+        "no-self-compare": "warn",
+        "no-eval": "error",
+        "no-implied-eval": "error",
+        "prefer-const": "off",
+        "no-implicit-globals": "error",
+        "no-console": "off",
+        "no-restricted-globals": [
+          "error",
+          {
+            "name": "app",
+            "message": "Avoid using the global app object. Instead use the reference provided by your plugin instance."
+          },
+          "warn",
+          {
+            "name": "fetch",
+            "message": "Use the built-in `requestUrl` function instead of `fetch` for network requests in Obsidian."
+          },
+          {
+            "name": "localStorage",
+            "message": "Prefer `App#saveLocalStorage` / `App#loadLocalStorage` functions to write / read localStorage data that's unique to a vault."
+          }
+        ],
+        "no-restricted-imports": [
+          "error",
+          {
+            "name": "axios",
+            "message": "Use the built-in `requestUrl` function instead of `axios`."
+          },
+          {
+            "name": "superagent",
+            "message": "Use the built-in `requestUrl` function instead of `superagent`."
+          },
+          {
+            "name": "got",
+            "message": "Use the built-in `requestUrl` function instead of `got`."
+          },
+          {
+            "name": "ofetch",
+            "message": "Use the built-in `requestUrl` function instead of `ofetch`."
+          },
+          {
+            "name": "ky",
+            "message": "Use the built-in `requestUrl` function instead of `ky`."
+          },
+          {
+            "name": "node-fetch",
+            "message": "Use the built-in `requestUrl` function instead of `node-fetch`."
+          },
+          {
+            "name": "moment",
+            "message": "The 'moment' package is bundled with Obsidian. Please import it from 'obsidian' instead."
+          }
+        ],
+        "no-alert": "error",
+        "import/no-nodejs-modules": "error"
+      },
+      "plugins": [
+        "typescript",
+        "import"
+      ]
+    },
+    {
+      "files": [
+        "**/*.ts",
+        "**/*.tsx"
+      ],
+      "rules": {
+        "constructor-super": "off",
+        "getter-return": "off",
+        "no-class-assign": "off",
+        "no-const-assign": "off",
+        "no-dupe-class-members": "off",
+        "no-dupe-keys": "off",
+        "no-func-assign": "off",
+        "no-import-assign": "off",
+        "no-new-native-nonconstructor": "off",
+        "no-obj-calls": "off",
+        "no-redeclare": "off",
+        "no-setter-return": "off",
+        "no-this-before-super": "off",
+        "no-unreachable": "off",
+        "no-unsafe-negation": "off",
+        "no-var": "error",
+        "no-with": "off",
+        "prefer-const": "off",
+        "prefer-rest-params": "error",
+        "prefer-spread": "error",
+        "no-array-constructor": "error",
+        "no-implied-eval": "error",
+        "no-unused-expressions": "error",
+        "no-unused-vars": [
+          "warn",
+          {
+            "args": "none"
+          }
+        ],
+        "no-throw-literal": "off",
+        "prefer-promise-reject-errors": "off",
+        "require-await": "off",
+        "typescript/ban-ts-comment": "off",
+        "typescript/no-duplicate-enum-values": "error",
+        "typescript/no-empty-object-type": "error",
+        "typescript/no-explicit-any": [
+          "error",
+          {
+            "fixToUnknown": true
+          }
+        ],
+        "typescript/no-extra-non-null-assertion": "error",
+        "typescript/no-misused-new": "error",
+        "typescript/no-namespace": "error",
+        "typescript/no-non-null-asserted-optional-chain": "error",
+        "typescript/no-require-imports": "error",
+        "typescript/no-this-alias": "error",
+        "typescript/no-unnecessary-type-constraint": "error",
+        "typescript/no-unsafe-declaration-merging": "error",
+        "typescript/no-unsafe-function-type": "error",
+        "typescript/no-wrapper-object-types": "error",
+        "typescript/prefer-as-const": "error",
+        "typescript/prefer-namespace-keyword": "error",
+        "typescript/triple-slash-reference": "error",
+        "no-self-compare": "warn",
+        "no-eval": "error",
+        "no-implicit-globals": "error",
+        "no-console": "off",
+        "no-restricted-globals": [
+          "error",
+          {
+            "name": "app",
+            "message": "Avoid using the global app object. Instead use the reference provided by your plugin instance."
+          },
+          "warn",
+          {
+            "name": "fetch",
+            "message": "Use the built-in `requestUrl` function instead of `fetch` for network requests in Obsidian."
+          },
+          {
+            "name": "localStorage",
+            "message": "Prefer `App#saveLocalStorage` / `App#loadLocalStorage` functions to write / read localStorage data that's unique to a vault."
+          }
+        ],
+        "no-restricted-imports": [
+          "error",
+          {
+            "name": "axios",
+            "message": "Use the built-in `requestUrl` function instead of `axios`."
+          },
+          {
+            "name": "superagent",
+            "message": "Use the built-in `requestUrl` function instead of `superagent`."
+          },
+          {
+            "name": "got",
+            "message": "Use the built-in `requestUrl` function instead of `got`."
+          },
+          {
+            "name": "ofetch",
+            "message": "Use the built-in `requestUrl` function instead of `ofetch`."
+          },
+          {
+            "name": "ky",
+            "message": "Use the built-in `requestUrl` function instead of `ky`."
+          },
+          {
+            "name": "node-fetch",
+            "message": "Use the built-in `requestUrl` function instead of `node-fetch`."
+          },
+          {
+            "name": "moment",
+            "message": "The 'moment' package is bundled with Obsidian. Please import it from 'obsidian' instead."
+          }
+        ],
+        "no-alert": "error",
+        "import/no-nodejs-modules": "error"
+      },
+      "plugins": [
+        "typescript",
+        "import"
+      ]
+    },
+    {
+      "files": [
+        "package.json"
+      ],
+      "rules": {
+        "no-irregular-whitespace": "off"
+      }
+    }
+  ]
+}

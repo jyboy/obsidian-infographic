@@ -30,5 +30,8 @@ export default tseslint.config(
 		"version-bump.mjs",
 		"versions.json",
 		"main.js",
+		"package.json",
+		"tsconfig.json",
+		".oxlintrc.json",
 	]),
 );
