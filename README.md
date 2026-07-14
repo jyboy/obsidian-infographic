@@ -99,8 +99,6 @@ data
       value 240
       desc 拓展生态协同，冲击新高
       icon lucide/trophy
-theme light
-  palette antv
 ```
 ````
 
@@ -152,9 +150,7 @@ obsidian-infographic/
 
 This plugin uses [@antv/infographic](https://github.com/antvis/Infographic) for rendering. The infographic content is passed directly to the Infographic instance.
 
-Theme setting:
-- `Auto (follow Obsidian theme)` (default): automatically switches between `default` and `dark` when Obsidian theme changes
-- Built-in themes from `@antv/infographic` (for example `default`, `dark`, `hand-drawn`)
+The plugin manages the theme automatically: it prepends `theme dark` while Obsidian is in dark mode, and emits no `theme` block in light mode so Infographic uses its default theme. Do not add a `theme` block to the code block source.
 
 For more information on infographic syntax and features, see the [Infographic documentation](https://github.com/antvis/Infographic).
 
